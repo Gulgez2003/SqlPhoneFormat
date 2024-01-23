@@ -39,4 +39,4 @@ SET @result = dbo.FormatPhoneNumber(@number)
 
 SELECT @result AS Result
 ```
-In this example, the function is used to format the phone number '0501.' The result is then displayed in the Result column.
+In this example, the function is used to format the phone number '0501112222.' The result is then displayed in the `Result` column.
