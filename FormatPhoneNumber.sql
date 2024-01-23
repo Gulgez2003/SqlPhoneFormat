@@ -29,21 +29,21 @@ BEGIN
 			BEGIN
 				SET @result = CONCAT('+994 0',SUBSTRING(@number,1,2),' ',SUBSTRING(@number,3,3),' ',SUBSTRING(@number,6,2),' ',SUBSTRING(@number,8,2))
 			END
-		 ELSE IF @number LIKE '994%' 
-            BEGIN
-                SET @result = CONCAT('+994 ',SUBSTRING(@number,4,3),' ',SUBSTRING(@number,7,3),' ',SUBSTRING(@number,10,2),' ',SUBSTRING(@number,12,2))
-            END   
-         ELSE IF @number LIKE '+994%' 
-            BEGIN
-                SET @result = CONCAT(SUBSTRING(@number,1,4),' ',SUBSTRING(@number,5,3),' ',SUBSTRING(@number,8,3),' ',SUBSTRING(@number,11,2),' ',SUBSTRING(@number,13,2))
-            END   
+		ELSE IF @number LIKE '994%' 
+                        BEGIN
+                                SET @result = CONCAT('+994 ',SUBSTRING(@number,4,3),' ',SUBSTRING(@number,7,3),' ',SUBSTRING(@number,10,2),' ',SUBSTRING(@number,12,2))
+                        END   
+                ELSE IF @number LIKE '+994%' 
+                        BEGIN
+                                SET @result = CONCAT(SUBSTRING(@number,1,4),' ',SUBSTRING(@number,5,3),' ',SUBSTRING(@number,8,3),' ',SUBSTRING(@number,11,2),' ',SUBSTRING(@number,13,2))
+                        END  
 		ELSE
-        BEGIN
-			SET @result = 'Invalid phone number format';
-		END
+                        BEGIN
+	        		SET @result = 'Invalid phone number format';
+	        	END
 	END
 
-    RETURN @result;
+        RETURN @result;
 END
 
 
